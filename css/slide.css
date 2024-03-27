@@ -1,0 +1,21 @@
+.slide {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100px; /* Ajusta la altura según tus necesidades */
+}
+  
+.slide img {
+    position: absolute;
+    top: 0;
+    animation: desplazamiento 6s linear infinite; /* Modifica la duración según tu preferencia */
+}
+  
+@keyframes desplazamiento {
+    0% {
+      left: 100%; /* La imagen comienza fuera del área visible */
+    }
+    100% {
+      left: -100%; /* La imagen se desplaza completamente fuera del área visible */
+    }
+}
