@@ -1,3 +1,8 @@
+<?php 
+    //Se conecta la pagina con la base de datos
+    require_once "config/dbConnect.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
