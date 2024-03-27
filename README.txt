@@ -7,3 +7,6 @@
 
 #Tercer Commit: Daniel 4:59 PM 3/27/2024
 #Añadida conexión a la base de datos
+
+#Cuarto Commit: Diego 6:22 PM 3/27/2024
+#Cambiadas las extensiones de las páginas de HTML a PHP
