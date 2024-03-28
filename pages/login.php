@@ -11,7 +11,7 @@
     <body class="bg-light">
         <header class="bg-color_Yellow">
             <nav>
-                <a href="../index.html"><img src="../img/logo.jpg" class="ms-3" width="190px"></a>
+                <a href="../index.php"><img src="../img/logo.jpg" class="ms-3" width="190px"></a>
             </nav>
         </header>
         <main>
@@ -33,7 +33,7 @@
                             </form>
                             <div class="text-center">
                                 <p>¿No tienes un perfil?</p>
-                                <p>Registrate <a href="register.html" class="link_hover">aquí</a>.</p>
+                                <p>Registrate <a href="register.php" class="link_hover">aquí</a>.</p>
                             </div>
                         </div>
                     </div>

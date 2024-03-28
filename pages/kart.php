@@ -25,9 +25,19 @@
                 <section class="my-3">
 
                     <!aqui se escribe el script lógico de llenado de carrito>
+
+                    <!-El script en JS debe aparecer solamente cuando se llene el carrito,
+                        debe ir a la par del producto y se debe validar que no llene mas
+                        de la existencia en stock.
+                    ->
                     <script src="../config/counter.js"></script>
-                    <button id="decrement">-</button>
-                    <button id="increment">+</button>
+                    <div class="d-flex flex-row-reverse my-3">
+                        <div class="item_div">
+                            <button class="button_yellow mx-3 shadow" id="decrement">-</button>
+                            <h6 id="counter" class="mx-4">0</h6>
+                            <button class="button_yellow mx-3 shadow" id="increment">+</button>
+                        </div>
+                    </div>
                     <div class="d-flex justify-content-center">
                         <button class="button_green shadow w-25">PAGAR</button>
                     </div>

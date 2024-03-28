@@ -11,8 +11,8 @@
     <body class="bg-light">
         <header class="bg-color_Yellow">
             <nav class="item_div">
-                <a href="../index.html"><img src="../img/logo.jpg" class="ms-3" width="190px"></a>
-                <a href="login.html" class="button_black mx-5 shadow">INICIA SESIÓN</a>
+                <a href="../index.php"><img src="../img/logo.jpg" class="ms-3" width="190px"></a>
+                <a href="login.php" class="button_black mx-5 shadow">INICIA SESIÓN</a>
             </nav>
         </header>
         <main>

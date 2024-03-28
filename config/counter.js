@@ -5,7 +5,12 @@ function main() {
     let counter = 0;
 
     function handleCounter(type = "increment") {
-        type === "increment" ? counter++ : counter--;
+        if (type === "increment") {
+            counter++;
+        } else {
+            // Asegurémonos de que el contador no sea negativo
+            counter = Math.max(0, counter - 1);
+        }
         counterElem.innerText = counter; 
     }
 

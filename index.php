@@ -27,8 +27,8 @@
                             y se pegan) 2 navs y que cada uno responda según la condición, es decir, Si no está iniciado se muestra
                             el boton, si está iniciado entonces no se muestra.
                         >
-                        <a class="button_black shadow marginSpace-x" href="pages/login.html">INICIAR SESIÓN</a>
-                        <a class="button_black shadow marginSpace-x" href="pages/kart.html">CARRITO</a>
+                        <a class="button_black shadow marginSpace-x" href="pages/login.php">INICIAR SESIÓN</a>
+                        <a class="button_black shadow marginSpace-x" href="pages/kart.php">CARRITO</a>
                     </div>
                 <div>
             </nav>

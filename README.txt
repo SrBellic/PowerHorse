@@ -7,3 +7,11 @@
 
 #Tercer Commit: Daniel 4:59 PM 3/27/2024
 #Añadida conexión a la base de datos
+
+#Cuarto Commit: Diego 6:22 PM 3/27/2024
+#Cambiadas las extensiones de las páginas de HTML a PHP
+
+#Quinto Commit: Diego 10:28 PM 3/27/2024
+#Actualización de los enlaces y botones añadidos
+#Añadida utilidad por JS para funcionamiento de
+#los botones de stock 
