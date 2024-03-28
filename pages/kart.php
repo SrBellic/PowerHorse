@@ -25,7 +25,9 @@
                 <section class="my-3">
 
                     <!aqui se escribe el script lógico de llenado de carrito>
-
+                    <script src="../config/counter.js"></script>
+                    <button id="decrement">-</button>
+                    <button id="increment">+</button>
                     <div class="d-flex justify-content-center">
                         <button class="button_green shadow w-25">PAGAR</button>
                     </div>
