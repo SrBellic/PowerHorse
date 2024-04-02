@@ -23,3 +23,7 @@
 #Insercion del Carrito
 #Actualizacion index
 
+#Septimo Commit: Diego 3:37 PM 2/4/2024
+#Proyecto en fase preeliminar
+#Base de datos terminada
+#Front terminado
