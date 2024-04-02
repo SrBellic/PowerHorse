@@ -1,0 +1,198 @@
+#mensaje-pago {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    display: none; /* Por defecto, oculto */
+}
+
+ul{
+    list-style: none;
+}
+
+a:link{
+    color: #000;
+    text-decoration: none;
+}
+.link_hover{
+    text-decoration: none;
+}
+.link_hover:hover{
+    text-decoration: underline;
+}
+
+.marginSpace-x{
+    /*Clase para crear margenes en el eje X*/
+    margin: 0 5px;
+}
+
+.marginSpace-y{
+    margin: 5px;
+}
+
+.item_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_top{
+    position: absolute;
+    top: 12%;
+    bottom: 0;
+}
+
+.item_center{
+    text-align: start;
+    align-items: center;
+}
+
+.item_grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 1fr)); /* Ajusta las columnas automáticamente según el tamaño del contenedor */
+    gap: 20px;
+}
+
+.item_grid .border {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item_grid picture {
+    flex: 1;
+}
+
+.item_grid article {
+    flex: 0 0 auto;
+}
+
+.item_grid .button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*.item_grid .button_yellow {
+    width: 100%;
+}*/
+
+
+.grid_center{
+    justify-items: center;
+    text-align: start;
+    font-size: 20px;
+}
+
+.button-container {
+    text-align: center; /* Alinea el contenido del contenedor al centro */
+    margin-top: 10px; /* Ajusta el margen superior para separar el botón del texto */
+}
+
+.button_black{
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #000; 
+    background-color: #fff; 
+    border-color: #f8f9fa; 
+}
+.button_black:hover {
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000; 
+    transition: all 0.3s ease;
+}
+
+.button_green{
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #328725; 
+    background-color: #fff; 
+    border-color: #fff; 
+}
+.button_green:hover {
+    color: #ffffff; 
+    background-color: #328725; 
+    border-color: #328725; 
+    transition: all 0.3s ease;
+}
+
+.button_red{
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #ef0c0c; 
+    background-color: #fff; 
+    border-color: #f8f9fa; 
+}
+.button_red:hover {
+    color: #ffffff; 
+    background-color: #ef0c0c; 
+    border-color: #ef0c0c; 
+    transition: all 0.3s ease;
+}
+
+.button_yellow{
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #000; 
+    background-color: #fff; 
+    border-color: #f8f9fa; 
+}
+.button_yellow:hover {
+    color: #000; 
+    background-color: #f4f400; 
+    border-color: #f4f400; 
+    transition: all 0.3s ease;
+}
+
+.bg-color_Yellow{
+    background-color: #f4f400;
+}
+
+.bg-color_GreenLight{
+    background-color: #BCE78C;
+}
+
+.bg-color_CustomWhite{
+    background-color: #FFFEE5;
+}
