@@ -15,6 +15,13 @@ a:link{
     color: #000;
     text-decoration: none;
 }
+
+.item-Top{
+    position: relative;
+    margin-bottom: auto;
+}
+
+
 .link_hover{
     text-decoration: none;
 }
@@ -44,8 +51,9 @@ a:link{
 }
 
 .item_center{
-    text-align: start;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .item_grid {
