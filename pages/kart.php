@@ -76,9 +76,16 @@ function imprimirCarrito() {
             $total += $producto["precio"];
         }
 
+        //Si el carrito no esta vacio, aparece el total de la compra y el boton de pagar
         if (!empty($_SESSION["carrito"])) {
             echo '<div id="total-compra-contenedor" class="container ms-3">
                     <h4 id="total-compra">Total: '.$total.'$</h4>
+                  </div>
+
+                  <br>
+                  
+                  <div class="d-flex justify-content-center">
+                  <button id="pagar-btn" class="my-3 button_green fw-bold shadow w-25">PAGAR</button>
                   </div>';
         }
     }
