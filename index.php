@@ -37,7 +37,7 @@ $filtroBusqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : null;
 <body>
     <header class="bg-color_Yellow">
         <nav class="item_div">
-            <img src="img/logo.jpg" class="ms-3" width="190px">
+            <a href="index.php"><img src="img/logo.jpg" class="ms-3" width="190px"></a>
             <div class="item_div marginSpace-x">
                 <form action="#" method="POST" class="marginSpace-x">
                     <input type="search" class="form-control form-control-lg shadow" name="busqueda" placeholder="Buscar">

@@ -41,8 +41,8 @@ function imprimirCarrito() {
             $decrement_button_id = 'decrement_' . $button_id_suffix;
             $button_id_suffix++;
 
-            echo '<div class="container ms-4">'.
-                    '<img src="../assets/productos/'.$producto["imagen"].'" class="rounded-top" width="200px">'.
+            echo '<div class="container px-4">'.
+                    '<img src="../assets/productos/'.$producto["imagen"].'" class="rounded-top" width="180px">'.
                     '<br>'
                     .$producto["nombre"].
                     '<br>'
@@ -106,7 +106,7 @@ function imprimirCarrito() {
         </nav>
     </header>
     <div class="item_div py-3">
-        <main class="col-9 bg-white border border-2 rounded w-50 mx-5 shadow">
+        <main class="col-6 bg-white border border-2 rounded mx-5 shadow">
             <h2 class="my-2 text-center">TUS COMPRAS</h2>
             <hr class="border opacity-100">
             <section id="carrito-section" class="my-3">
@@ -125,7 +125,7 @@ function imprimirCarrito() {
             <div class="d-flex justify-content-center">
                 <button id="pagar-btn" class="my-3 button_green fw-bold shadow w-25">PAGAR</button>
             </div>
-            <section id="metodos-pago" class="col-7 bg-white border border-2 rounded shadow m-3" style="display: none;">
+            <section id="metodos-pago" class="col-9 bg-white border border-2 rounded shadow m-3" style="display: none;">
                 <h5 class="my-2 ms-2">MÉTODOS DE PAGO</h5>
                 <hr class="border border opacity-100">
                 <form action="#" method="POST" class="m-3 row">
@@ -152,10 +152,10 @@ function imprimirCarrito() {
                 </div>
             </section>
         </main>
-        <aside class="col-4 me-5 border border-2 rounded bg-white shadow">
+        <aside class="col-4 me-5 item-Top border border-2 rounded bg-white shadow d-lg-block d-md-block d-sm-block d-none">
             <h5 class="mt-2 ms-2">TASA DEL DOLAR</h5>
             <hr class="border opacity-100">
-            <section class="text-center justify-content-center">
+            <section class="text-center justify-content-center py-5 my-5">
                 <b><p>TASA BCV:</p></b>
                 <b><p>1$ = 36,33 Bs</p></b>
             </section>

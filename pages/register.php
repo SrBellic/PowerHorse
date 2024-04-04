@@ -145,14 +145,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </nav>
     </header>
     <main>
-        <?php
-            if(isset($error)==True){
-                echo $error;
-            }
-        ?>
         <div class="container bg-white text-black my-4 pb-3 rounded border border-2 w-50 shadow">
             <h1 class="py-2 my-2">REGISTRO</h1>
             <hr class="border opacity-100">
+            <?php
+                if(isset($error)==True){
+                    echo '<div class="container item_center text-center my-3">
+                            <div class="col-6 card bg-light text-danger border border-danger shadow">
+                                <div class="card-body">
+                                    ' . $error . '
+                                </div>
+                            </div>
+                        </div>';
+                }
+            ?>
             <form action="#" method="POST">
                 <div class="row">
                     <div class="col-6">
