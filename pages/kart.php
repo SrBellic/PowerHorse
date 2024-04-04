@@ -24,9 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id-producto"])) {
         "imagen" => $_POST['imagen-producto'],
     );
 
-    // Redirigir para evitar que se vuelva a enviar el formulario al recargar la página
-    header("Location: kart.php");
+    //Se obtiene el nombre del producto, para poder mostrarlo en el mensaje en pantalla, al redirigir la pagina
+    $nombre = $_SESSION["carrito"][count($_SESSION['carrito']) - 1]["nombre"];
+    header('Location: ../index.php?nombre='.$nombre.'');
     exit(); 
+
 }
 
 // Función para imprimir el contenido del carrito

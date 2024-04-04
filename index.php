@@ -35,6 +35,20 @@ $filtroBusqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : null;
     <title>PowerHorse</title>
 </head>
 <body>
+    <?php   
+            //Si la variable existe en metodo get, aparece en el mensaje de que el producto se encuentra en el carrito
+            if(isset($_GET["nombre"]))
+            {
+
+                //Aparece el mensaje de que el producto esta en el carrito, y se borra la variable GET para evitar que se repita el mensaje al recargar la pagina
+                echo '<script type="text/javascript"> alert("El producto '.$_GET["nombre"].' se encuentra en el carrito");
+                                                        window.history.replaceState({}, "", window.location.href.split("?")[0]);
+
+                                                        </script>';
+
+            }
+
+            ?>
     <header class="bg-color_Yellow">
         <nav class="item_div">
             <a href="index.php"><img src="img/logo.jpg" class="ms-3" width="190px"></a>
