@@ -27,3 +27,8 @@
 #Proyecto en fase preeliminar
 #Base de datos terminada
 #Front terminado
+
+#Octavo Commit: Diego 11:00 PM 3/4/2024
+#Añadidos mensajes de error estilizados en la pagina de registro 
+#Añadida una etiqueta <a> en la pagina del Index para reestablecer los filtros de busqueda 
+#Cambiada la clase item_center para poder centrar mejor los divs
