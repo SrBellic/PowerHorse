@@ -32,3 +32,7 @@
 #Añadidos mensajes de error estilizados en la pagina de registro 
 #Añadida una etiqueta <a> en la pagina del Index para reestablecer los filtros de busqueda 
 #Cambiada la clase item_center para poder centrar mejor los divs
+
+#Noveno Commit: Daniel 7:00 PM 4/4/2024
+#Arreglado mensaje de carrito
+#Arreglado botón para pagar
