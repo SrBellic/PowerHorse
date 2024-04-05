@@ -1,6 +1,12 @@
 <?php
 require_once "../config/dbConnect.php";
 
+session_start();
+// Verificar si la sesión está iniciada
+if (isset($_SESSION['usuario'])) {
+    header("Location:../index.php");
+    exit();
+    }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST["correo"];
     $pass = $_POST["pass"];
@@ -10,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //verifica que el correo sea valido
         if(!filter_var($correo, FILTER_VALIDATE_EMAIL) || 
-        strlen($correo) > 255 || preg_match("/[,;'´`\"\\s]/", $correo)){
+        strlen($correo) > 255 || preg_match("/[,;'´` \"\\s]/", $correo)){
             $error_message = "Correo electrónico tiene caracteres invalidos";
         
         //verifica que la contraseña sea valida
