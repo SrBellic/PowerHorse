@@ -36,3 +36,6 @@
 #Noveno Commit: Daniel 7:00 PM 4/4/2024
 #Arreglado mensaje de carrito
 #Arreglado botón para pagar
+
+#Decimo Commit: Diego 11:59 PM 4/4/2024
+#Agregado nuevo botón para borrar filtros
