@@ -1,34 +1,40 @@
 <?php
+
+require_once '../config/dbConnect.php';
+
 session_start();
 
-// Verificar si la sesión está iniciada
-if (!isset($_SESSION['usuario'])) {
-    // Si la sesión no está iniciada, redirigir al usuario a la página de inicio de sesión
-    header("Location:login.php");
-    exit();
-}
+$bandera = false;
 
 // Verificar si se está intentando agregar un producto al carrito
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id-producto"])) {
+
     // Agregar el producto al carrito
     if (!isset($_SESSION['carrito'])) 
         $_SESSION['carrito'] = array();
 
     $_SESSION["carrito"][] = array(
+        "cantidad" => intval($_POST["cantidad-producto"]),
         "id" => $_POST["id-producto"], 
         "nombre" => $_POST["nombre-producto"],
         "descripcion" => $_POST["descripcion-producto"],
         "marca" => $_POST["marca-producto"],
         "precio" => floatval($_POST["precio-producto"]),
         "stock" => $_POST['stock-producto'],
-        "imagen" => $_POST['imagen-producto'],
+        "imagen" => $_POST['imagen-producto']
     );
+
+    // Verificar si la sesión está iniciada
+    if (!isset($_SESSION['usuario'])) {
+    // Si la sesión no está iniciada, redirigir al usuario a la página de inicio de sesión
+    header("Location:login.php");
+    exit();
+    }
 
     //Se obtiene el nombre del producto, para poder mostrarlo en el mensaje en pantalla, al redirigir la pagina
     $nombre = $_SESSION["carrito"][count($_SESSION['carrito']) - 1]["nombre"];
     header('Location: ../index.php?nombre='.$nombre.'');
     exit(); 
-
 }
 
 // Función para imprimir el contenido del carrito
@@ -76,20 +82,20 @@ function imprimirCarrito() {
             $total += $producto["precio"];
         }
 
-        //Si el carrito no esta vacio, aparece el total de la compra y el boton de pagar
         if (!empty($_SESSION["carrito"])) {
             echo '<div id="total-compra-contenedor" class="container ms-3">
                     <h4 id="total-compra">Total: '.$total.'$</h4>
                   </div>
 
                   <br>
-                  
+
                   <div class="d-flex justify-content-center">
                   <button id="pagar-btn" class="my-3 button_green fw-bold shadow w-25">PAGAR</button>
                   </div>';
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -120,24 +126,36 @@ function imprimirCarrito() {
             <hr class="border opacity-100">
             <section id="carrito-section" class="my-3">
                 <?php
+
                 // Mostrar contenido del carrito
                 if (isset($_SESSION['carrito'])) {
                     imprimirCarrito();
-                } else {
-                    echo "<p class='fs-4 text-center'>No hay productos en el carrito.</p>";
-                }
+                } 
                 ?>
             </section>
+
+            <?php
+
+            // Verifica si la compra fue realizada
+            if(isset($_GET["compraRealizada"]))
+            {
+
+                echo '<section id="mensaje-pago" class="my-3" style="display: block;"> <!-- Este es el contenedor del mensaje de pago -->
+                            <h3>Pago realizado. ¡Gracias por su compra!</h3>
+                        </section>';
+
+            }
+
+            ?>
+
             <section id="mensaje-pago" class="my-3"> <!-- Este es el contenedor del mensaje de pago -->
                 <h3>Pago realizado. ¡Gracias por su compra!</h3>
             </section>
-            <div class="d-flex justify-content-center">
-                <button id="pagar-btn" class="my-3 button_green fw-bold shadow w-25">PAGAR</button>
-            </div>
+            
             <section id="metodos-pago" class="col-9 bg-white border border-2 rounded shadow m-3" style="display: none;">
                 <h5 class="my-2 ms-2">MÉTODOS DE PAGO</h5>
                 <hr class="border border opacity-100">
-                <form action="#" method="POST" class="m-3 row">
+                <form action="kart.php" method="POST" class="m-3 row">
                     <label for="pago" class="form-label fw-medium">MÉTODO DE PAGO</label>
                     <select name="pago" class="form-select w-50">
                         <option value="pago_movil">Pago Móvil</option>
@@ -145,11 +163,13 @@ function imprimirCarrito() {
                     </select>
                     <input type="button" value="SELECCIONAR" class="button_green fw-bold shadow col-6" id="seleccionar-btn">
                 </form>
+
+                <form action="../config/actualizarDB.php" method="POST" class="m-3 row">
                 <div id="pago_movil-info" class="ms-3 my-2 pago-info" style="display: none;">
                     <p class="fs-5">Número de teléfono: <b>0412 0000 000</b></p>
                     <p class="fs-5">J-<b>0123456789</b></p>
                     <p class="fs-5">Banco Moya</p>
-                    <button class="button_green fw-bold shadow verificar-button">VERIFICAR</button>
+                    <button name="validar-compra" class="button_green fw-bold shadow verificar-button">PAGAR AHORA</button>
                 </div>
                 <div id="transferencia-info" class="ms-3 my-2 pago-info" style="display: none;">
                     <p class="fs-5">Número de teléfono: <b>0412 0000 000</b></p>
@@ -157,12 +177,15 @@ function imprimirCarrito() {
                     <p class="fs-5">Banco Moya</p>
                     <p class="fs-5">powerhorse@moya.com</p>
                     <p class="fs-5">N° Cuenta: <b>0666 0104 0123 0123 0123</b></p>
-                    <button class="button_green fw-bold shadow verificar-button">VERIFICAR</button>
+                    <button name="validar-compra" class="button_green fw-bold shadow verificar-button">PAGAR AHORA</button>
                 </div>
+            </form>
+
             </section>
+            <div id="prueba"></div>
         </main>
         <aside class="col-4 me-5 item-Top border border-2 rounded bg-white shadow d-lg-block d-md-block d-sm-block d-none">
-            <h5 class="mt-2 ms-2">TASA DEL DOLAR</h5>
+            <h5 class="mt-2 ms-2">TASA DEL DÓLAR</h5>
             <hr class="border opacity-100">
             <section class="text-center justify-content-center py-5 my-5">
                 <b><p>TASA BCV:</p></b>

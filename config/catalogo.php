@@ -44,6 +44,7 @@ function mostrarCarrito($connect, $filtroMarca = null, $filtroBusqueda = null)
                                 <input type="hidden" name="precio-producto" value="'.$producto["precio_producto"].'"> 
                                 <input type="hidden" name="stock-producto" value="'.$producto["stock_producto"].'">
                                 <input type="hidden" name="imagen-producto" value="'.$producto["imagen_producto"].'">
+                                <input type="hidden" name="cantidad-producto" value="1">
                                 <div class="button-container">
                                     <input type=submit class="button_yellow fw-bold shadow mx-5" value="COMPRAR">
                                 </div>
