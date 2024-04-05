@@ -78,6 +78,8 @@ $filtroBusqueda = isset($_POST['busqueda']) ? $_POST['busqueda'] : null;
                     <li class="marginSpace-y link_hover"><a href="index.php?marca=Chevrolet" class="w-100">Chevrolet</a></li>
                     <li class="marginSpace-y link_hover"><a href="index.php?marca=Volkswagen" class="w-100">Volkswagen</a></li>
                 </div>
+                <br>
+                <a href="index.php" class="button_yellow fw-bold fs-5 shadow">BORRAR FILTROS</a>
             </ul>
         </aside>
         <main class="container shadow p-4 bg-light">
