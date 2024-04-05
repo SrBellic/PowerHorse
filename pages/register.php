@@ -39,24 +39,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error = "La cédula es incorrecta";}
 
         //Valida la direccion
-        if (strlen($direccion) > 250 || !is_string($direccion) || !preg_match("/^[a-zA-Z0-9\s,]+$/", $direccion)) {
+        if (strlen($direccion) < 5 ||strlen($direccion) > 250 || !is_string($direccion) 
+        || !preg_match("/^[a-zA-Z0-9\s,]+$/", $direccion)) {
             $error = 'La dirección pasa el límite de caracteres (250) o contiene caracteres no permitidos';}
 
         //Valida el nombre del usuario
-        if (strlen($user) > 30 || !is_string($user) || 
+        if (strlen($user) < 5 || strlen($user) > 30 || !is_string($user) || 
             strpos($user, ' ') !== false || !preg_match("/^[a-zA-Z0-9_]+$/", $user)){  
             $error = 'El nombre de usuario pasa el límite de caracteres (30), contiene espacios en blanco o caracteres no permitidos';}      
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || 
-            strlen($email) > 255 || preg_match("/[,;\"\\s]/", $email)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) < 10 ||
+            strlen($email) > 255 || preg_match("/[,;'´`\"\\s]/", $email)) {
             $error = 'El correo electronico es invalido';}
 
         //Valida la cantidad de caracteres de la contraseña
-        if(strlen($pass)>30 ||!is_string($pass) || $pass != $pass2){  
-            $error = 'La contraseña pasa el limite de caracteres (30) o no coincide con la comprobacion';}
+        if(strlen($pass)< 6 || strlen($pass)>20 ||!is_string($pass) || $pass != $pass2
+         || !preg_match("/^[a-zA-Z0-9_]+$/", $pass)){  
+            $error = 'La contraseña pasa el limite de caracteres (20), no cumple el minimo (6) o no coincide con la comprobacion';}
 
-        if(strlen($pass2)>30 ||!is_string($pass2) || $pass != $pass2){  
-            $error = 'La contraseña pasa el limite de caracteres (30) o no coincide con la comprobacion';}
+        if(strlen($pass2)< 6 || strlen($pass2)>20 ||!is_string($pass2) || $pass != $pass2
+        || !preg_match("/^[a-zA-Z0-9_]+$/", $pass2)){  
+            $error = 'La contraseña pasa el limite de caracteres (20), no cumple el minimo (6) o no coincide con la comprobacion';}
         
         if($error === ""){
             // Verificar si el usuario ya existe
@@ -163,30 +166,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="row">
                     <div class="col-6">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" name="nombre" class="form-control shadow">
+                        <input type="text" name="nombre" class="form-control shadow"
+                        required maxlength="20">
                         <br>
                         <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" name="apellido" class="form-control shadow">
+                        <input type="text" name="apellido" class="form-control shadow"
+                        required maxlength="20">
                         <br>
                         <label for="id" class="form-label">Cedula</label>
-                        <input type="number" name="id" class="form-control shadow">
+                        <input type="number" name="id" class="form-control shadow"
+                        required maxlength="8">
                         <br>
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control shadow">
+                        <input type="text" name="direccion" class="form-control shadow"
+                        required minlength="5" maxlength="250">
                         <br>
                     </div>
                     <div class="col-6">
                         <label for="user" class="form-label">Usuario</label>
-                        <input type="text" name="user" class="form-control shadow">
+                        <input type="text" name="user" class="form-control shadow"
+                        required minlength="5" maxlength="30">
                         <br>
                         <label for="email" class="form-label">Correo Electronico</label>
-                        <input type="text" name="email" class="form-control shadow">
+                        <input type="text" name="email" class="form-control shadow"
+                        required minlength="10" maxlength="255">
                         <br>
                         <label for="pass" class="form-label">Contraseña</label>
-                        <input type="password" name="pass" class="form-control shadow">
+                        <input type="password" name="pass" class="form-control shadow"
+                        required minlength="6" maxlength="20">
                         <br>
                         <label for="pass2" class="form-label">Confirmar contraseña</label>
-                        <input type="password" name="pass2" class="form-control shadow">
+                        <input type="password" name="pass2" class="form-control shadow"
+                        required minlength="6" maxlength="20">
                         <br>
                     </div>
                 </div>
