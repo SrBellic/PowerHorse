@@ -3,6 +3,12 @@
 require_once '../config/dbConnect.php';
 
 session_start();
+// Verificar si la sesión está iniciada
+if (!isset($_SESSION['usuario'])) {
+    // Si la sesión no está iniciada, redirigir al usuario a la página de inicio de sesión
+    header("Location:login.php");
+    exit();
+    }
 
 $bandera = false;
 
@@ -20,16 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id-producto"])) {
         "descripcion" => $_POST["descripcion-producto"],
         "marca" => $_POST["marca-producto"],
         "precio" => floatval($_POST["precio-producto"]),
-        "stock" => $_POST['stock-producto'],
+        "stock" => intval($_POST['stock-producto']),
         "imagen" => $_POST['imagen-producto']
     );
 
-    // Verificar si la sesión está iniciada
-    if (!isset($_SESSION['usuario'])) {
-    // Si la sesión no está iniciada, redirigir al usuario a la página de inicio de sesión
-    header("Location:login.php");
-    exit();
-    }
 
     //Se obtiene el nombre del producto, para poder mostrarlo en el mensaje en pantalla, al redirigir la pagina
     $nombre = $_SESSION["carrito"][count($_SESSION['carrito']) - 1]["nombre"];
